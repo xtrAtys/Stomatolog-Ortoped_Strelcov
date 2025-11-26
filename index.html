@@ -112,6 +112,37 @@
             overflow: hidden;
         }
 
+        .modal-content {
+            border-radius: 10px;
+            border: none;
+        }
+
+        .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom: none;
+        }
+
+        .modal-header .btn-close {
+            filter: invert(1);
+        }
+
+        .modal-body {
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .modal-body h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .modal-body h5 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
         @media (max-width: 768px) {
             .google-form-container {
                 height: 1300px;
@@ -354,31 +385,141 @@
             </div>
             <div class="col-md-3 mb-3 mb-md-0">
                 <h5>Быстрые ссылки</h5>
-                <ul class="list-unstyled">
+                <ul class="list-unstyled d-flex flex-wrap gap-3">
                     <li><a href="#" class="text-light text-decoration-none">Главная</a></li>
                     <li><a href="#services" class="text-light text-decoration-none">Услуги</a></li>
                     <li><a href="#doctors" class="text-light text-decoration-none">Врачи</a></li>
                     <li><a href="#contact" class="text-light text-decoration-none">Контакты</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
-                <h5>Мы в соцсетях</h5>
-                <div class="d-flex gap-3">
-                    <a href="#" class="text-light"><i class="bi bi-instagram fs-5"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-vk fs-5"></i></a>
-                    <a href="#" class="text-light"><i class="bi bi-telegram fs-5"></i></a>
-                </div>
-            </div>
         </div>
         <hr class="my-4">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <p class="mb-0">© 2023 Стоматология "Ортодонт Стрельцов". Все права защищены.</p>
+                <p class="mb-0">© 2025 Стоматология "Ортопед Стрельцов". Все права защищены.</p>
             </div>
             <div class="col-md-6 text-md-end">
-                <a href="#" class="text-light text-decoration-none me-3">Политика конфиденциальности</a>
-                <a href="#" class="text-light text-decoration-none">Пользовательское соглашение</a>
+                <a href="#" class="text-light text-decoration-none me-3" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">Политика конфиденциальности</a>
+                <a href="#" class="text-light text-decoration-none" data-bs-toggle="modal" data-bs-target="#userAgreementModal">Пользовательское соглашение</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно политики конфиденциальности -->
+    <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyPolicyModalLabel">Политика конфиденциальности</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color: #333 !important;">
+                    <h4>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h4>
+
+                    <h5>1. Общие положения</h5>
+                    <p>1.1. Настоящая Политика определяет порядок обработки персональных данных в стоматологической клинике "Ортодонт Стрельцов".</p>
+                    <p>1.2. Цель обработки данных - запись на прием и предоставление медицинских услуг.</p>
+
+                    <h5>2. Состав персональных данных</h5>
+                    <p>Мы собираем:</p>
+                    <ul>
+                        <li>ФИО</li>
+                        <li>Контактный телефон</li>
+                        <li>Электронная почта</li>
+                        <li>Предпочтительная дата и время приема</li>
+                        <li>Дополнительная информация, которую вы указали в форме</li>
+                    </ul>
+
+                    <h5>3. Цели обработки данных</h5>
+                    <ul>
+                        <li>Запись на прием</li>
+                        <li>Направление уведомлений о приеме</li>
+                        <li>Обратная связь с пациентами</li>
+                        <li>Информирование об акциях и услугах</li>
+                    </ul>
+
+                    <h5>4. Условия обработки данных</h5>
+                    <p>4.1. Обработка осуществляется с вашего согласия</p>
+                    <p>4.2. Данные хранятся в течение 5 лет</p>
+                    <p>4.3. Мы не передаем данные третьим лицам без вашего согласия</p>
+
+                    <h5>5. Права субъекта персональных данных</h5>
+                    <p>Вы имеете право:</p>
+                    <ul>
+                        <li>На доступ к вашим данным</li>
+                        <li>На уточнение данных</li>
+                        <li>На удаление данных</li>
+                        <li>На отзыв согласия на обработку</li>
+                    </ul>
+
+                    <h5>6. Контакты</h5>
+                    <p>По вопросам обработки данных обращайтесь:</p>
+                    <p>Email: info@ortodontmalkov.ru</p>
+                    <p>Телефон: +7 (495) 123-45-67</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Принимаю</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно пользовательского соглашения -->
+    <div class="modal fade" id="userAgreementModal" tabindex="-1" aria-labelledby="userAgreementModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="userAgreementModalLabel">Пользовательское соглашение</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color: #333 !important;">
+                    <h4>ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ</h4>
+
+                    <h5>1. Термины и определения</h5>
+                    <p><strong>Сайт</strong> - веб-сайт стоматологической клиники "Ортодонт Стрельцов"</p>
+                    <p><strong>Пользователь</strong> - посетитель сайта</p>
+                    <p><strong>Услуги</strong> - стоматологические услуги, предоставляемые клиникой</p>
+
+                    <h5>2. Общие положения</h5>
+                    <p>2.1. Использование сайта означает принятие условий соглашения</p>
+                    <p>2.2. Соглашение может изменяться без предварительного уведомления</p>
+
+                    <h5>3. Условия использования сайта</h5>
+                    <p>3.1. Запрещается:</p>
+                    <ul>
+                        <li>Размещать вредоносный код</li>
+                        <li>Копировать контент без разрешения</li>
+                        <li>Распространять недостоверную информацию</li>
+                    </ul>
+
+                    <h5>4. Запись на прием</h5>
+                    <p>4.1. Заполняя форму, вы подтверждаете достоверность данных</p>
+                    <p>4.2. Заявка на прием не является гарантией оказания услуг</p>
+                    <p>4.3. Подтверждение записи осуществляется по телефону</p>
+
+                    <h5>5. Ответственность</h5>
+                    <p>5.1. Мы не несем ответственности за:</p>
+                    <ul>
+                        <li>Неточности в информации, предоставленной пользователем</li>
+                        <li>Технические сбои в работе сайта</li>
+                        <li>Действия третьих лиц</li>
+                    </ul>
+
+                    <h5>6. Интеллектуальная собственность</h5>
+                    <p>6.1. Весь контент сайта защищен авторским правом</p>
+                    <p>6.2. Использование материалов возможно только с разрешения</p>
+
+                    <h5>7. Контактная информация</h5>
+                    <p>Стоматология "Ортодонт Стрельцов"</p>
+                    <p>Адрес: г. Москва, ул. Стоматологическая, д. 15</p>
+                    <p>Телефон: +7 (495) 123-45-67</p>
+                    <p>Email: info@ortodontmalkov.ru</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Принимаю</button>
+                </div>
             </div>
         </div>
     </div>
